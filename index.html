@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あなたの物語</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="wrap">    
+
+    <h1>あなたの物語を伝えましょう</h1>
+
+    <label>
+        <span class="textbox-001-label">あなたの名前を教えてください</span>
+        <input type="text" id="key" placeholder=""/>
+    </label>
+
+    <label>
+    <span class="textbox-001-label">【起】あなたはどんな人ですか？</span>
+    <input type="text" class="textbox-001" placeholder=""/>
+    </label>
+
+    <label>
+        <span class="textbox-001-label">【承】誰のどんな課題を見つけましたか？</span>
+        <input type="text" class="textbox-001" placeholder=""/>
+    </label>
+
+    <label>
+        <span class="textbox-001-label">【転】その課題をどのように解決しますか？</span>
+        <input type="text" class="textbox-001" placeholder=""/>
+    </label>
+
+    <label>
+        <span class="textbox-001-label">【結】解決できるとどんな世界になりますか？</span>
+        <input type="text" class="textbox-001" placeholder=""/>
+    </label>
+
+
+    <button id="save">save</button>
+
+    <!-- <button class="button-001">update</button>
+    <button class="button-001">clear</button> -->
+
+
+    <table id="list">
+        <!-- ここに追加データが挿入される -->
+    </table>
+    
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+
+
+$("#save").on("click",function(){
+
+    const key = $("#key").val();
+    const value = $(".textbox-001").val();
+    localStorage.setItem(key,value);
+
+    console.log(key,value)
+
+    const html = `
+    
+        ${key}
+        ${value}
+    `
+    $("#list").append(html)
+
+})
+
+
+</script>
+
+</body>
+</html>
