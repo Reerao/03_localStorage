@@ -20,26 +20,28 @@
 
     <label>
     <span class="textbox-001-label">【起】あなたはどんな人ですか？</span>
-    <input type="text" class="textbox-001" placeholder=""/>
+    <input type="text" id="起" placeholder=""/>
     </label>
 
     <label>
         <span class="textbox-001-label">【承】誰のどんな課題を見つけましたか？</span>
-        <input type="text" class="textbox-001" placeholder=""/>
+        <input type="text" id="承" placeholder=""/>
     </label>
 
     <label>
         <span class="textbox-001-label">【転】その課題をどのように解決しますか？</span>
-        <input type="text" class="textbox-001" placeholder=""/>
+        <input type="text" id="転" placeholder=""/>
     </label>
 
     <label>
         <span class="textbox-001-label">【結】解決できるとどんな世界になりますか？</span>
-        <input type="text" class="textbox-001" placeholder=""/>
+        <input type="text" id="結" placeholder=""/>
     </label>
 
 
     <button id="save">save</button>
+    <button id="clear">clear</button>
+
 
     <!-- <button class="button-001">update</button>
     <button class="button-001">clear</button> -->
@@ -59,19 +61,56 @@
 $("#save").on("click",function(){
 
     const key = $("#key").val();
-    const value = $(".textbox-001").val();
-    localStorage.setItem(key,value);
+    const value1 = $("#起").val();
+    const value2 = $("#承").val();
+    const value3 = $("#転").val();
+    const value4 = $("#結").val();
 
-    console.log(key,value)
+    const value = [value1,value2,value3,value4]
+
+    let json = JSON.stringify(value, undefined, 1);
+	localStorage.setItem(key, json);
+
+    // localStorage.setItem(key,value);
 
     const html = `
-    
-        ${key}
-        ${value}
+
+        ${key}さんのストーリー</br>
+        私は${value}人です。</br>
+        そんな私は${value}課題を見つけました。</br>
+        その課題を${value}ことで解決します。</br>
+        そうすることで、${value}を実現します！！！</br>
+        
     `
     $("#list").append(html)
 
 })
+
+$("#clear").on("click", function(){
+    localStorage.clear();
+    $("#list").empty();
+})
+
+for(let i=0; i<localStorage.length; i++){
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key)
+
+    // let json = localStorage.getItem(key);
+	// let value = JSON.parse(json);
+
+    const html = `
+  
+        ${key}さんのストーリー</br>
+        私は${value}人です。</br>
+        そんな私は${value}課題を見つけました。</br>
+        その課題を${value}ことで解決します。</br>
+        そうすることで、${value}を実現します！！！</br>
+        
+    `
+
+    $("#list").append(html)
+
+}
 
 
 </script>

@@ -4,7 +4,11 @@
 
 .textbox-001-label,
 .textbox-001,
-#name {
+#key,
+#起,
+#承,
+#転,
+#結 {
     color: #333;
 }
 
@@ -15,7 +19,11 @@
 }
 
 .textbox-001,
-#key {
+#key,
+#起,
+#承,
+#転,
+#結 {
     width: 100%;
     padding: 8px 10px;
     border: none;
@@ -25,12 +33,13 @@
     line-height: 1.5;
 }
 
-.textbox-001,
-#key::placeholder {
-    color: #999;
-}
 
-#save {
+
+
+
+
+#save,
+#clear {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +54,8 @@
     font-size: 1em;
 }
 
-#save:hover {
+#save:hover,
+#clear:hover {
     animation: anima-button-001 1s;
 }
 
