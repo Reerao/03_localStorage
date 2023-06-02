@@ -24,10 +24,10 @@ CSSにて擬似要素を含む処理がある場合、複数要素に対して�
 }
 
 - [参考記事]
-**CSS Stock**　https://pote-chil.com/html-maker
+    **CSS Stock**　https://pote-chil.com/html-maker
 
-**jQuery｢val｣でフォームや要素のvalue値を取得・設定する**　https://stand-4u.com/web/javascript/jquery-val.html
+    **jQuery｢val｣でフォームや要素のvalue値を取得・設定する**　https://stand-4u.com/web/javascript/jquery-val.html
 
-****JavaScript | 配列をローカルストレージで保存、取得する方法****　https://1-notes.com/javascript-save-the-array-to-local-storage/
+    ****JavaScript | 配列をローカルストレージで保存、取得する方法****　https://1-notes.com/javascript-save-the-array-to-local-storage/
 
-****jQueryを使ってJSONデータを取得、配列にして値を出力する方法****　https://kasumiblog.org/jquery-json/
+    ****jQueryを使ってJSONデータを取得、配列にして値を出力する方法****　https://kasumiblog.org/jquery-json/
