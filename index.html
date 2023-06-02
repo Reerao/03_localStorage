@@ -76,11 +76,11 @@ $("#save").on("click",function(){
     const html = `
 
         ${key}さんのストーリー</br>
-        私は${value}人です。</br>
-        そんな私は${value}課題を見つけました。</br>
-        その課題を${value}ことで解決します。</br>
-        そうすることで、${value}を実現します！！！</br>
-        
+        私は${value[0]}人です。</br>
+        そんな私は${value[1]}課題を見つけました。</br>
+        その課題を${value[2]}ことで解決します。</br>
+        そうすることで、${value[3]}を実現します！！！</br>
+        </br>        
     `
     $("#list").append(html)
 
@@ -93,18 +93,18 @@ $("#clear").on("click", function(){
 
 for(let i=0; i<localStorage.length; i++){
     const key = localStorage.key(i);
-    const value = localStorage.getItem(key)
-
-    // let json = localStorage.getItem(key);
-	// let value = JSON.parse(json);
+    
+    let json = localStorage.getItem(key);
+	let value = JSON.parse(json);
 
     const html = `
   
-        ${key}さんのストーリー</br>
-        私は${value}人です。</br>
-        そんな私は${value}課題を見つけました。</br>
-        その課題を${value}ことで解決します。</br>
-        そうすることで、${value}を実現します！！！</br>
+    ${key}さんのストーリー</br>
+    私は${value[0]}人です。</br>
+    そんな私は${value[1]}課題を見つけました。</br>
+    その課題を${value[2]}ことで解決します。</br>
+    そうすることで、${value[3]}を実現します！！！</br>
+    </br>
         
     `
 
